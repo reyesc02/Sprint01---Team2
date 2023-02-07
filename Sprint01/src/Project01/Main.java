@@ -7,10 +7,17 @@ import Project01.Nation;
 import Project01.Tribe;
 import Project01.PlayGame;
 
-
+/**
+ * The Main class. Sets up and runs the Warring Nations Game.
+ */
 public class Main {
 
 
+    /**
+     * The Main function. Sets up the game options such as gameLifePoints and adds
+     * players to the list of nations. Runs the simulation until one nation is the winner.
+     * The winner is output to the screen.
+     */
     public static void main(String[] args)
     {
        int gameLifePoints = 2000;
