@@ -5,6 +5,11 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.*;
 
+/**
+ * The PlayGame Class. This class is responsible for running the game
+ * through the PlayGame function. It also keeps track of the array of nations
+ * and people for the game.
+ */
 public class PlayGame
 {
 
@@ -12,12 +17,22 @@ public class PlayGame
     ArrayList<People> worldLivingPopulation = new ArrayList<>();
     Random generator;
 
+    /**
+     * The PlayGame function. This function creates a new seed for the random
+     * number generation for the game.
+     */
     public PlayGame()
     {
         Date seed = new Date();
         generator = new Random(seed.getTime());
     }
 
+    /**
+     * The getWorldLivingPopulation function. The nations argument
+     * is the list of nations. The worldLivingPopulation is updated by
+     * looping through the nations and adding their size to the worldLivingPopulation.
+     * @param nations the list of nations to calculate the world population from.
+     */
     public void getWorldLivingPopulation(ArrayList<Nation> nations)
     {
         // add all living people to world list
@@ -30,6 +45,12 @@ public class PlayGame
     }
 
 
+    /**
+     * The getAllLivingNations function. The nations argument is the
+     * list of nations. The allLivingNations list is updated with every
+     * nation that returns true from isNationAlive function.
+     * @param nations the list of nations to calculate the number of living nations from.
+     */
     public void getAllLivingNations(ArrayList<Nation> nations)
     {
         getWorldLivingPopulation(nations);
@@ -44,7 +65,14 @@ public class PlayGame
         //System.out.print(allLivingNations);
     }
 
-
+    /**
+     * The encounter function. The argument p1 is person from the
+     * first nation. The argument p2 is the person from the second nation.
+     * An encounter is played between the two people. Damage is calculated
+     * and 
+     * @param p1
+     * @param p2
+     */
     public void encounter(People p1, People p2)
     {
         // need to fix this to take strategies into account.
