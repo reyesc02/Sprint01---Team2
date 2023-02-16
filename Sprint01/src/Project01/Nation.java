@@ -6,6 +6,12 @@ import java.util.ArrayList;
 import Project01.Tribe;
 import Project01.People;
 
+/**
+ * The Nation Class
+ * This class has sets up the Nation data object. It holds variables for
+ * the specific nation. It also contains the functions for interacting
+ * with the nation.
+ */
 public class Nation
 {
     private int nationLifePoints;
@@ -16,6 +22,13 @@ public class Nation
     private ArrayList<People> livingPopulation = new ArrayList<>();
 
 
+    /**
+     * Constructor for Nation.
+     * This function accepts a name and lifePoints and sets the nationName,
+     * and nationLifePoints to the arguments.
+     * @param name The name of the nation
+     * @param lifePoints The lifePoints of the nation
+     */
     public Nation(String name, int lifePoints)
     {
         nationCount++;
@@ -30,11 +43,22 @@ public class Nation
     }
 
 
+    /**
+     * Function to check whether a nation is still alive.
+     * A nation is alive if it has more than 0 lifePoints.
+     * @return True if nationLifePoints are greater than 0, false otherwise.
+     */
     public Boolean isNationAlive()
     {
         return (nationLifePoints > 0);
     }
 
+    /**
+     * Function to get the population of a nation. This function loops through
+     * the tribes in a nation and if they are alive they are added to the
+     * livingPopulation arrayList.
+     * @return the arrayList of nationPopulation.
+     */
     public ArrayList<People> getNationPopulation()
     {
         nationLifePoints = 0;
@@ -53,12 +77,20 @@ public class Nation
     }
 
 
+    /**
+     * Function to get nationName.
+     * @return the name of the nation.
+     */
     public String getNationName()
     {
         return nationName;
     }
 
 
+    /**
+     * Function to print the tribes status. The tribes can be alive and
+     * have members, or they are dead.
+     */
     public void printTribesStatus()
     {
         for(int tribe = 0; tribe < 1; tribe++)
@@ -75,6 +107,11 @@ public class Nation
         }
     }
 
+    /**
+     * Function to print the information of a nation. The name and tribe size
+     * are converted to a string to be returned.
+     * @return The nation information that has been turned into a string.
+     */
     public String toString()
     {
         String result = "\0";
