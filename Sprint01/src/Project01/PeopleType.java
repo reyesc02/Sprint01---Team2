@@ -1,5 +1,10 @@
 package Project01;
 
+/**
+*There are two types of people they are either warrior or wizzard which is 
+*random but base on the number generator.
+*/ 
+
 public enum PeopleType
 {
     warrior ("Solder"),
